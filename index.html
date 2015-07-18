@@ -69,17 +69,56 @@
             <p>HTML Templates</p>
             <p>HTML Imports</p>
           </section>
+
           <section>
-            <h2>Basement Level 1</h2>
-            <p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+            <h2>Custom Elements</h2>
+            <div class="fragment">
+              <h3>Spec TL;DR</h3>
+              <ul>
+                <li class="fragment">Name must be hyphenated.</li>
+                <li class="fragment">Element must be defined and registered before use.</li>
+                <li class="fragment">Written as either <span class="backtick">&lt;new-tag&gt;&lt;/new-tag&gt;</span> or <span class="backtick">&lt;p is="new-tag"&gt;&lt;/p&gt;</span></li>
+                <li class="fragment">Callbacks can be defined on <span class="backtick">created</span>, <span class="backtick">attached</span>, <span class="backtick">detached</span>, <span class="backtick">attributeChanged</span></li>
+                <li class="fragment">New <span class="backtick">Document.registerElement()</span> method, and overloads to <span class="backtick">Document.createElement()</span> with <span class="backtick">TypeExtension</span> argument.</li>
+                <li class="fragment">New CSS <span class="backtick">:unresolved</span> pseudo-class for unregistered elements.</li>
+              </ul>
+            </div>
           </section>
+
           <section>
-            <h2>Basement Level 2</h2>
-            <p>That's it, time to go back up.</p>
-            <br>
-            <a href="#/2">
-              <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-            </a>
+            <h2>Shadow Dom</h2>
+            <div class="fragment">
+              <h3>Spec TL;DR</h3>
+              <ul>
+                <li class="fragment">New <span class="backtick">ShadowRoot</span> object, extends <span class="backtick">DocumentFragment</span>.</li>
+                <li class="fragment">Elements now have <span class="backtick">createShadowRoot()</span> method and <span class="backtick">shadowRoot</span> attribute.</li>
+                <li class="fragment">New <span class="backtick">content</span> element which acts as an insertion point for content.</li>
+                <li class="fragment">New <span class="backtick">shadow</span> element which acts as an insertion point for other shadow trees.
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>HTML Templates</h2>
+            <div class="fragment">
+              <h3>Spec TL;DR</h3>
+              <ul>
+                <li class="fragment">Parsed, but not rendered.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>HTML Imports</h2>
+            <div class="fragment">
+              <h3>Spec TL;DR</h3>
+              <ul>
+                <li class="fragment">New extension of <span class="backtick">&lt;link&gt;</span> tag.</li>
+                <li class="fragment">May have an <span class="backtick">async</span> attribute.</li>
+                <li class="fragment">Map of imports is stored in "Master Document" - the only document that is not an import.</li>
+              </ul>
+            </div>
+            <p class="fragment">JavaScript is scoped to master document!</p>
           </section>
         </section>
 
