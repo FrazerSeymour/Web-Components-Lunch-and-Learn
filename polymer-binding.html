@@ -1,0 +1,20 @@
+<link rel="import" href="polymer/polymer.html">
+
+<dom-module id="polymer-binding">
+  <template>
+    <h1><content></content></h1>
+  </template>
+  <script>
+    Polymer({
+      is: 'polymer-binding',
+      properties: {
+        textcolor: String,
+        textbackground: String
+      },
+      attributeChanged: function(name, value) {
+        this.$.querySelector("h1").style.color = this.textcolor;
+        this.$.querySelector("h1").style.backgroundColor = this.textbackground;
+      }
+    });
+  </script>
+</dom-module>

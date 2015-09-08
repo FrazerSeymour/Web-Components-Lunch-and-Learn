@@ -1,0 +1,47 @@
+<template id="template1">
+  <style>
+    div {
+      position: relative;
+      width: 750px;
+    }
+    img {
+      width: 750px;
+      height: auto;
+    }
+    h4 {
+      width: 50%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: right;
+      padding: 1em;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  </style>
+  <div>
+    <img src="./bane.jpg"></img>
+    <h4><content></content></h4>
+  </div>
+</template>
+
+<script>
+(function(window, document, undefined) {
+  var thatDoc = document;
+  var thisDoc =  (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
+  
+  var template = thisDoc.querySelector('#template1').content;
+  
+  var CustomQuotePrototype = Object.create(HTMLDivElement.prototype);
+  
+  CustomQuotePrototype.createdCallback = function() {
+    var shadowRoot = this.createShadowRoot();
+    var clone = thatDoc.importNode(template, true);
+    shadowRoot.appendChild(clone);
+  };
+  
+  window.CustomQuote = thatDoc.registerElement('custom-quote', {
+      prototype: CustomQuotePrototype
+  });
+})(window, document);
+</script>
